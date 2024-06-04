@@ -22,6 +22,7 @@ git push -f origin main 시 나타나는 창 우측의 Token으로 선택하여 
 <h3>✏️Now Studying</h3>
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 </br></br>
 
 <h3>🎯Hits</h3>
