@@ -1,7 +1,7 @@
 <div align=center>
 
 
-![header](https://capsule-render.vercel.app/api?type=Cylinder&color=timeGradient&height=100&section=header&text=Studies%20on%20JDBC&fontSize=30)
+![header](https://capsule-render.vercel.app/api?type=Cylinder&color=timeGradient&height=100&section=header&text=Studies%20on%20HTML&fontSize=30)
 </br></br>
 <h3>👋Hi there</h3>
 <p>각자 학습한 내용 및 과제물을 올립니다.</br>
@@ -21,7 +21,7 @@ git push -f origin main 시 나타나는 창 우측의 Token으로 선택하여 
 
 <h3>✏️Now Studying</h3>
 
-![Java](https://img.shields.io/badge/jdbc-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 </br></br>
 
 <h3>🎯Hits</h3>
