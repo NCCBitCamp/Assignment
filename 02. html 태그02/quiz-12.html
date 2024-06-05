@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 주문서</title>
+</head>
+<body>
+    <h1>상품 주문서</h1>
+    <form action="/subject/submit">
+        <fieldset>
+            <legend style="color: purple; font-weight: bold; font-size: large;">개인 정보</legend>
+            <div>
+                <label for="id" style="font-weight: bold; font-size: medium;">이름</label>
+                <input type="text" id="id" name="id" placeholder="여백없이 입력">
+            </div>
+            <div>
+                <label for="id" style="font-weight: bold; font-size: medium;">연락처</label>
+                <input type="text" id="id" name="id" placeholder="연락가능한 번호">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend style="color: purple; font-weight: bold; font-size: large;">배송지 정보</legend>
+            <div>
+                <label for="address" style="font-weight: bold; font-size: medium;">주소</label>
+                <input type="text" id="address" name="address" size="40">
+            </div>
+            <div>
+                <label for="phone" style="font-weight: bold; font-size: medium;">전화번호</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div>
+                <label for="id" style="font-weight: bold; font-size: medium;">메 모</label>
+                <textarea name="memo" id="memo" cols="40" rows="3"></textarea>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend style="color: purple; font-weight: bold; font-size: large;">주문 정보</legend>
+            <label>
+                <input type="checkbox" name="coffee" value="coffee1">
+                    과테말라 안티구아 (100g)
+                    <input type="text" id="coffee" name="coffee" size="5" value="0"> 개
+                </input>
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="coffee" value="coffee2">
+                    인도네시아 만델링 (100g)
+                    <input type="text" id="coffee" name="coffee" size="5" value="0"> 개
+                </input>
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="coffee" value="coffee3">
+                    탐라는도다(블렌딩) (100g)
+                    <input type="text" id="coffee" name="coffee" size="5" value="0"> 개
+                </input>
+            </label>
+        </fieldset>
+        <br>
+        <div style="text-align: center;">
+            <input type="submit" value="주문하기">
+            <input type="reset" value="다시 작성">
+        </div>
+    </form>
+</body>
+</html>
