@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>상품 지원서</title>
+    <style>
+			#container { 
+				width:520px;
+				border:1px solid black;
+				padding:20px 40px;
+				margin:0 auto;
+			}
+			fieldset { 
+				margin-bottom:15px; }
+			legend { 
+				font-weight:bold; 
+				color: purple;
+			}
+			ul {list-style-type: none;}
+			li { line-height:30px;}
+					
+
+    </style>
+  </head>
+  <body>
+		<div id="container">
+			<h1>상품 주문서 </h1>
+
+			<form>
+				<fieldset>
+					<legend>개인 정보</legend>
+					<ul>
+						<li>
+							<label for="name">이름</label>
+							<input type="text" id="name" placeholder="공백없이 입력하세요.">
+						</li>
+					
+						<li>
+							<label for="tel" class="parent">연락처</label>
+							<input type="tel" id="tel">
+						</li>
+					</ul>
+				</fieldset>
+				
+				<fieldset>
+					<legend>배송지 정보</legend>
+					<ul>
+						<li>
+							<label for="addr">주소</label>
+							<input type="text" id="addr" style="width: 300px;">
+						</li>
+					
+						<li>
+							<label for="tel">전화번호</label>
+							<input type="tel" id="tel">
+						</li>
+						
+						<li>
+							<label for="memo">메모</label>
+							<textarea id="memo" cols="40" height="200px"></textarea>
+						</li>
+					
+					</ul>
+				</fieldset>
+
+				<fieldset>
+					<legend>주문 정보</legend>
+					<p>
+						<input type="checkbox">
+						<label>과테말라 안티구아 (100g)</label>
+						<input type="number" id="memberCnt" name="memberCnt" min="1" max="5" step="1" value="0">
+						개
+					</p>
+					
+					<p>
+						<input type="checkbox">
+						<label>인도네시아 만델링 (100g)</label>
+						<input type="number" id="memberCnt" name="memberCnt" min="1" max="5" step="1" value="0">
+						개
+					</p>
+					
+					<p>
+						<input type="checkbox">
+						<label>탐나는도다(블렌딩) (100g)</label>
+						<input type="number" id="memberCnt" name="memberCnt" min="1" max="5" step="1" value="0">
+						개
+					</p>
+				</fieldset>
+
+				<input type="submit" value="주문하기">
+				<input type="reset" value="다시 작성">
+			
+			</form>
+		</div>
+  </body>
+</html>
