@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+<body>
+    <script>
+        const num = window.prompt("숫자를 입력하시오.");
+
+        document.write(`<h2>짝수일까, 홀수일까</h2>`);
+        if(parseInt(num) % 2 == 0)
+            document.write(`<p>${num}는 짝수입니다.</p>`);
+        else
+            document.write(`<p>${num}는 홀수입니다.</p>`); 
+        
+    </script>
+</body>
+</html>
