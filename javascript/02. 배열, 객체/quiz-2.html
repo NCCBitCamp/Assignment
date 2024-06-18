@@ -35,18 +35,28 @@
                 i = -1;
             }
         }
-        let ok = "당첨!";
+        let count = 0;
 
         for(let i=0; i<lotto.length; i++){
-            for(let j=0; j<correct.length; j++){
+            for(let j=i; j<correct.length; j++){
                 if(lotto[i] == correct[j]){
-                    ok = "당첨!";
-                }
-                else{
-                    ok = "꽝!";
+                    count++;
                 }
             }
         }
+        let ok = "꽝!";
+        if(count==6) ok = "1등!";
+        else if(count==5){
+            for(let i=0; i<lotto.length; i++){
+                if(lotto[i] == bonus){
+                    ok = "2등!";
+                }
+            }
+            if(ok == "") ok = "3등!";
+        }
+        else if(count==4) ok = "4등!";
+        else if(count==3) ok = "5등!"; 
+        else ok = "꽝!"
         alert("이번주 당첨 번호는: "+correct.join(", ")+", 보너스 번호: "+bonus+"\n구입한 로또 번호 : "+lotto.join(", ") + "\n"+ok);
     </script>
 </body>
