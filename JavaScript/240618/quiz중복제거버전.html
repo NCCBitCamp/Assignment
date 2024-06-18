@@ -23,7 +23,6 @@
             
             for(let j = 0; j < i; j++) {
                 if(ranNum[i] == ranNum[j]){
-                    alert("");
                     ranNum.splice(i, 1);
                     i--;
                 }
@@ -31,8 +30,6 @@
         }
         
         document.write(`이번주 로또 당첨 번호는: ${ranNum.slice(0, 6)} 보너스번호:${ranNum[7]} <br> 구입한 로또 번호: ${userNum}`);
-        // alert(`구입한 로또 번호: ${userNum}`);
-
         let cnt = 0;
         let boNum = 0;
         for(let i = 0; i < 6; i++) {
@@ -54,14 +51,6 @@
         } else {
             alert("꽝!!!");
         }
-
-        // 구입한 로또 번호 <= 사용자 입력 값
-        // 번호가 다르면 꽝! 조건문\
-
-        // 4개 4등
-        // 5개 3등
-        // 5개 보너스 2등
-        // 6개 1등
     </script>
 </body>
 </html>
