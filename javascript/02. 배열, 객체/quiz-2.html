@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lotto = [];
+        for (let i = 0; i< 6;i++){
+            lotto[i]= parseInt(window.prompt("1~45까지의 숫자를 입력하세요."));
+        }
+        lotto.sort(function(a, b)  {
+            return a - b;
+        });
+
+        var correct = [];
+        for (let i = 0; i< 6; i++){
+            correct[i] = Math.floor(Math.random()*45)+1;
+            for(let j=0; j<i; j++){
+                if(correct[i] == correct[j]){ 
+                    i--;
+                    break;
+                }
+            }
+        }
+        correct.sort(function(a, b)  {
+            return a - b;
+        });
+        var bonus = Math.floor(Math.random()*45)+1;
+        for(let i=0; i<correct.length; i++){
+            if(bonus == correct[i]){
+                bonus = Math.floor(Math.random()*45)+1;
+                i = -1;
+            }
+        }
+        let ok = "당첨!";
+
+        for(let i=0; i<lotto.length; i++){
+            for(let j=0; j<correct.length; j++){
+                if(lotto[i] == correct[j]){
+                    ok = "당첨!";
+                }
+                else{
+                    ok = "꽝!";
+                }
+            }
+        }
+        alert("이번주 당첨 번호는: "+correct.join(", ")+", 보너스 번호: "+bonus+"\n구입한 로또 번호 : "+lotto.join(", ") + "\n"+ok);
+    </script>
+</body>
+</html>
