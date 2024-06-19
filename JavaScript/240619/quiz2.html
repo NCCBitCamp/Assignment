@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2번</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("load", (e) => {
+            const num1 = prompt("비교할 첫번째 숫자:");
+            const num2 = prompt("비교할 두번째 숫자:");
+
+            compareTwoNums(num1, num2);
+        });
+
+        function compareTwoNums(num1, num2) { // 매개변수명과 아래 기능부 변수명이 같아야 했다! 다르게 하니까 에러남!
+
+        if(num1 > num2){
+            alert(`${num1}(이)가 ${num2}보다 큽니다.`);
+        } else if (num2 > num1) {
+            alert(`${num2}(이)가 ${num1}보다 큽니다.`);
+        } else {
+            alert(`${num2} 와 ${num1}는 같습니다.`);
+        }
+    }
+    </script>
+</body>
+</html>
