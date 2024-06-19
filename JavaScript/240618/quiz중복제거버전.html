@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-2번</title>
+</head>
+<body>
+    <script>
+        // 유저값(구입한 로또 번호)
+        const userNum = [];
+
+        for(let i = 0; i < 6; i++){
+            let userPut = prompt(`1~45까지의 숫자를 입력하세요.`);
+            userNum.push(userPut);
+        }
+
+        // 이번주 로또 당첨 번호 + 보너스 번호 <= 랜덤 값 
+        // 랜덤 값 6개를 담는 변수 필요l
+        let ranNum = [];
+        for(let i = 0; i < 8; i++) {
+            ranNum.push(Math.floor(Math.random() * 45) + 1);
+            
+            for(let j = 0; j < i; j++) {
+                if(ranNum[i] == ranNum[j]){
+                    ranNum.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+        
+        document.write(`이번주 로또 당첨 번호는: ${ranNum.slice(0, 6)} 보너스번호:${ranNum[7]} <br> 구입한 로또 번호: ${userNum}`);
+        let cnt = 0;
+        let boNum = 0;
+        for(let i = 0; i < 6; i++) {
+            if(userNum[i] == ranNum[i]){
+                cnt++;
+            } else if(userNum[i] == ranNum[7]) {
+                boNum++;
+            }
+        }
+
+        if(cnt == 6) {
+            alert("1등 당첨!");
+        } else if(cnt == 5 && boNum == 1) {
+            alert("2등 당첨!");
+        } else if(cnt == 5) {
+            alert("3등 당첨!");
+        } else if(cnt == 4) {
+            alert("4등 당첨!");
+        } else {
+            alert("꽝!!!");
+        }
+    </script>
+</body>
+</html>
