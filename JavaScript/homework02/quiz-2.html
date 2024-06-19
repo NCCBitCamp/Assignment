@@ -34,7 +34,7 @@
             }
         }
 
-        for(let i = 0; i < 6; i++) {
+        for(let i = 0; i < 7; i++) {
             lottoArr[i] = (Math.floor(Math.random() * 45) + 1);
 
             for(let j = 0; j < i; j++) {
@@ -45,18 +45,11 @@
             }
         }
         
-        let bonus = 0;
-        let dupCheck = false;
+        // 한 번 더 따로 계산하는 대신 위에서 7까지 for문 돌리고 pop으로 꺼내기 + 원래 배열에서 삭제하기
+        let bonus = lottoArr.pop();
 
-        do {
-            bonus = (Math.floor(Math.random() * 45) + 1);
-            for(let i = 0; i < lottoArr.length; i++) {
-                if(bonus == lottoArr[i])
-                    dupCheck = true;
-            }
-        } while(dupCheck);
-
-        document.write(`이번주 로또 당첨 번호는 : ${lottoArr.join(', ')}, 보너스 번호 : ${bonus}<br>`);
+        // for문 대신 join 이용해서 간소화
+        document.write(`이번주 로또 당첨 번호는 : ${lottoArr.join(', ')}, 보너스 번호 : ${bonus}<br>`); 
         document.write(`구입한 로또 번호 : ${userArr.join(', ')}<br>`);
         
         let lottoCnt = 0;
