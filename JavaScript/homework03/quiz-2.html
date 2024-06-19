@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-2 대수비교</title>
+</head>
+<body>
+    <script>
+        let num1 = prompt("비교할 첫 번째 숫자:");
+        let num2 = prompt("비교할 두 번째 숫자:");
+        compareNum(num1, num2);
+        
+
+        function compareNum(a, b) {
+            if(a > b) {
+                alert(`${a}(이)가 ${b}보다 큽니다.`);
+                return;
+            }
+            if(a < b) {
+                alert(`${b}(이)가 ${a}보다 큽니다.`);
+                return;
+            }
+            if(a == b) {
+                alert("두 값이 같습니다.");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
