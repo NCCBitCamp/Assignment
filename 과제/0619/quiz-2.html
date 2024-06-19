@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var num1 = parseInt(window.prompt("비교할 첫번째 숫자"));
+        var num2 = parseInt(window.prompt("비교할 두 번째 숫자"));
+
+        // 함수
+        function Vigyuo( a, b ){
+            if(a > b){
+                window.alert(`${a}(이)가 ${b}보다 큽니다.`);
+            }else if(b > a){
+                window.alert(`${b}(이)가 ${a}보다 큽니다.`);
+            }else{
+                window.alert("둘은 갑습니다.")
+            }
+        }
+
+        Vigyuo(num1,num2);
+
+    </script>
+</body>
+</html>
