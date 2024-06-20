@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz02</title>
+</head>
+<body>
+    <script>
+        let numArr = []; //구입번호
+        for (let i = 0 ; i < 6; i++){
+            numArr[i] = parseInt(window.prompt("1~45까지의 숫자를 입력하세요."));
+
+            if(isNaN(numArr[i])){
+                alert("입력이 불가합니다. 다시 1~45 까지 숫자를 입력하세요.");
+                i--;
+                continue;
+            }
+
+            if(numArr[i] < 1 || numArr[i] > 45){
+                alert("숫자 범위가 넘어갔습니다. 다시 1~45 까지 입력하세요.");
+                i--;
+                continue;
+            }
+
+            for(let j = 0; j < i ; j++){
+                if(numArr[i]==numArr[j]){
+                    alert("중복 입력하셨습니다. 다시 1~45까지 입력하세요");
+                    i--;
+                    continue;
+                }
+            }
+
+        }
+
+        // 1. 정수 7개를 저장할 수 있는 배열 생성
+        // 2. 1~45까지의 숫자 중 랜덤한 숫자 7개 배열에 저장(중복제거)
+        let lotto = []; // 당첨번호
+        for(let i = 0; i < 7; i++){
+            // 랜덤 자체가 0부터 시작이기 때문에 +1
+            lotto[i] = Math.floor(Math.random() * 45) + 1;
+            for(let j = 0; j < i; j++) {
+                if(lotto[i]==lotto[j]){
+                    i--;
+                    break;
+                }
+            }
+        }
+
+        let bonus = Math.floor(Math.random() * 45) + 1;
+
+        for(let i = 0; i < 6; i++){
+            if(lotto[i] == bonus[i]){
+                i--;
+                bonus = Math.floor(Math.random() * 45) + 1;
+            }
+        }
+
+        let count = 0;
+        let congratulation;
+        // 1등
+        for(let i = 0; i < 6; i++) {
+            for(let j = 0; j < 6; j++) {
+                if(lotto[i]==numArr[j])
+                count++;
+            }
+        }
+        if(count == 6) {
+            congratulation = `1등 입니다.`;
+        } else if (count == 5) {
+            for(let i = 0; i < 6; i++){
+                if(numArr[i] == congratulation){
+                    congratulation = `2등 입니다.`;
+                }
+            }
+        } else if (count == 5 ) {
+            congratulation = `3등 입니다.`;
+        } else if (count == 4 ) {
+            congratulation = `4등 입니다.`;
+        } else if (count == 3 ) {
+            congratulation = `5등 입니다.`;
+        } else congratulation = `꽝!!!!!!!!`;
+
+
+        document.write(`이번주 로또 당첨 번호는: ${lotto.join(",")}, 보너스번호: ${bonus}<br>`);
+        document.write(`구입한 로또 번호: ${numArr.join(",")}<br>`);
+        document.write(`${congratulation}`);
+    </script>
+</body>
+</html>
