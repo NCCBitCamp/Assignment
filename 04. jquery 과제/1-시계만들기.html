@@ -30,19 +30,15 @@
         
 
         $(() => {
-            const nowDateTime = new Date();
-            let h = nowDateTime.getHours();
-            let min = nowDateTime.getMinutes();
-            let sec = nowDateTime.getSeconds();
-            const time = document.getElementsByClassName("time")[0];
+            const nowTime = new Date();
+            let h = nowTime.getHours();
+            let min = nowTime.getMinutes();
+            let sec = nowTime.getSeconds();
+            const format = (time) => {return time < 10 ? `0${time}` : time;}
+            
+            $("#clock").html(`${format(h)}:${format(min)}:${format(sec)}`);
 
-
-            time.innerText = `${zeroTime(h)}:${zeroTime(min)}:${zeroTime(sec)}`;
             let interval = setInterval(() => {
-                const zeroTime = (time) => {
-                    let timeStr = time < 10 ? `0${time}` : time;
-
-                    return timeStr;
                     sec++;
 
                     if(sec >= 60){
@@ -58,11 +54,8 @@
                     if(h >= 24){
                         h = 0;
                     }
-                }
-
-                time.innerText = `${zeroTime(h)}:${zeroTime(min)}:${zeroTime(sec)}`;
+                    $("#clock").html(`${format(h)}:${format(min)}:${format(sec)}`);
             },1000)
-
         });
     </script>
 </body>
